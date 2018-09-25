@@ -1,0 +1,11 @@
+﻿  AssessorComunicacaoDAO.cpp
+  BuracoDAO.cpp
+  ControllerAssessor.cpp
+  ControllerLogin.cpp
+  ControllerUsuarios.cpp
+  FotoDAO.cpp
+  MySQLDAO.cpp
+c:\users\8587903\desktop\14.06.2018\v4-versao_final_aula06\infoburacovisualstudio\infoburaco\infoburaco\mysqldao.h(3): fatal error C1083: Cannot open include file: 'cppconn/driver.h': No such file or directory
+  NotificacaoDAO.cpp
+  UsuarioDAO.cpp
+  Generating Code...

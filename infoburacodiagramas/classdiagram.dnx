@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<!--Rational Software Architect Designer 9.5-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<umlnotation:UMLDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xmi:id="_eIoRkFRjEeipfMTsY6uAaw" type="Class" name="classdiagram.dnx">
+  <children xmi:type="umlnotation:UMLShape" xmi:id="_eIoRkVRjEeipfMTsY6uAaw" fontName="Segoe UI" fontHeight="8" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+    <children xmi:type="notation:DecorationNode" xmi:id="_eIoRklRjEeipfMTsY6uAaw" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_eIoRk1RjEeipfMTsY6uAaw" width="1320" height="1320"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_eIoRlFRjEeipfMTsY6uAaw" type="Stereotype"/>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_eIoRlVRjEeipfMTsY6uAaw" type="Name"/>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_eIoRllRjEeipfMTsY6uAaw" type="Parent"/>
+    <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_eIoRl1RjEeipfMTsY6uAaw" type="PackageContents" collapsed="true" canonical="false"/>
+    <element xmi:type="uml:Package" href="mmi:///#cdt.namespace%5En=InfoBuraco$uml.Package"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eIoRmFRjEeipfMTsY6uAaw" x="5450" y="6111"/>
+  </children>
+  <element xsi:nil="true"/>
+</umlnotation:UMLDiagram>

@@ -1,0 +1,13 @@
+﻿  BuracoDAO.cpp
+c:\users\lucas marinho gomes\desktop\lab eng soft - pcs3443\projeto\infoburacovisualstudio\infoburaco\infoburaco\buracodao.cpp(15): warning C4101: 'statement': variável local não referenciada
+c:\users\lucas marinho gomes\desktop\lab eng soft - pcs3443\projeto\infoburacovisualstudio\infoburaco\infoburaco\buracodao.cpp(47): warning C4101: 'statement': variável local não referenciada
+  ControllerBuraco.cpp
+  Tela1_Login.cpp
+  Tela2_Inicio.cpp
+  Tela4_1_Registrar_Buraco.cpp
+  Tela4_2_Registrar_Notificacao.cpp
+  Tela4_Comunicacao.cpp
+  Gerando Código...
+c:\users\lucas marinho gomes\desktop\lab eng soft - pcs3443\projeto\infoburacovisualstudio\infoburaco\infoburaco\buracodao.cpp(35): warning C4700: variável local não inicializada 'connection' usada
+c:\users\lucas marinho gomes\desktop\lab eng soft - pcs3443\projeto\infoburacovisualstudio\infoburaco\infoburaco\buracodao.cpp(80): warning C4700: variável local não inicializada 'connection' usada
+  InfoBuraco.vcxproj -> C:\Users\Lucas Marinho Gomes\Desktop\Lab Eng Soft - PCS3443\projeto\infoburacovisualstudio\InfoBuraco\x64\Debug\InfoBuraco.exe

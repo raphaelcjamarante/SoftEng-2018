@@ -1,0 +1,78 @@
+leiame.txt
+	Lucas Marinho Gomes
+	Raphael Amarante
+	Dafne Coelho
+
+1) OBSERVAÇÕES INICIAIS
+Neste leiame, encontra-se também o roteiro de testes.
+O projeto do VisualStudio, em c++, está dentro da pasta infoburacovisualstudio > 
+InfoBuraco (chama-se InfoBuraco.sln). Nesta entrega, também estão os diagramas e modelos
+referentes às entregas anteriores, nas outras pastas.
+Neste projeto, foram implementados dois dos três casos de uso relativos à Assessoria de 
+Comunicação (conforme designado ao grupo): o Caso de Uso 1 (Registrar Novo Buraco) e o 
+Caso de Uso 8 (Registrar Notificação). São os dois casos de usos mais relevantes (de maior
+prioridade nos requisitos do enunciado geral do projeto).
+Devido à impossibilidade de uso do laboratório de programação a qualquer momento, foi 
+necessário desenvolver um ambiente local (em um computador de um dos indivíduos) para a
+conclusão da codificação desta última entrega. Porém, para permitir a devida disposição 
+dos recursos do projeto (banco de dados e ambiente de desenvolvimento em VisualStudio),
+duas alterações foram necessárias: a) foi necessário seguir o tutorial do Michelet de 
+indicações das pastas do conector e do boost, particularmente para a configuração da 
+máquina pessoal do integrante Lucas Marinho Gomes (sendo assim, para rodar o programa
+no computador de teste, será novamente necessário, antes de tudo, seguir o dito tutorial
+para indicação de onde estão, no respectivo computador, as pastas necessárias); b) foi 
+necessária a mudança da versão do Software Development Kit (SDK) do projeto, passando de
+10.0.16299.0 para um compatível (sem esta mudança, a compilação não rodava); c) instalação
+do MySQL Workbench, com a observação de que, aqui, houve troca de servidor entre nosso grupo 
+e o grupo_c (nós, portanto, UTILIZAMOS O BANCO DE DADOS REFERENTE A "grupo_c").
+
+2) LOGIN
+O login é feito passando-se ao sistema o nome de login e a senha. A partir daí, o sistema checa
+se há, no banco de dados, os referentes dados, permitindo a abertura da tela inicial do sistema
+caso a verificação seja validada. Aqui, a classe UsuarioDAO é usada para interação, a partir
+do c++, com o banco, além da classe Tela1_Login.
+Pode-se, aqui, usar login "asses" e senha "asses", referentes ao assessor de comunicação.
+
+3) EXPLICAÇÃO TEÓRICA DOS DOIS CASOS DE USO
+a) Registrar Novo Buraco: este caso de uso é utilizado sempre que o assessor de comunicação
+quer introduzir um novo buraco no sistema, sem necessariamente acoplá-lo a uma saída, porém
+necessariamente acoplando-o a uma ordem de serviço. Portanto, o uso deste caso deve inserir
+no banco de dados não apenas uma nova linha de Buraco, mas também uma nova linha de OrdemServico.
+Sendo assim, na classe usada para interface com o banco BuracoDAO, em seu método registrarBuraco,
+há também a inserção (o statement INSERT) de uma OrdemServico inicializada com o parâmetro id do
+buraco recém criado.
+O mecanismo de validação permite, conforme prescrito no texto do caso de uso, que seja verificado
+a priori se o referente buraco já existe. Conforme existir ou não, abre-se uma caixa de diálogo 
+indicando de que caso se trata.
+É válido sugerir a consulta ao diagrama/modelo de dados físico para entender o porquê da inicialização
+de duas linhas em tabelas diferentes, tanto neste caso de uso, quanto no próximo.
+b) Registrar Notificação: ao registrar uma notificação, o assessor de comunicação, em contato com o
+reclamante, deve verificar a existência do bloco no local descrito pelo interlocutor (via validação,
+na aba Registrar Buraco). Caso não haja ainda o buraco mencionado, ele deve antes usar o caso de uso 
+anterior para apenas então ser possível usar este. Com o buraco devidamente introduzido no sistema,
+a notificação poderá ser criada "apontando" para este buraco, a partir da passagem dos dados de id
+do buraco, contato do informante, data da interação e eventualmente fotos.
+Caso as fotos sejam introduzidas, será também necessário (novamente devido à estrutura do modelo
+físico de dados adotado) a criação de uma linha na tabela Foto, lançando mão do id da notificação
+recém criada. Isto é feito fazendo com que o registrarNotificacao retorne um inteiro correspondendo
+ao id da notificação criada, podendo então ser usado de input para a instanciação de uma linha em
+Foto (isto está particularmente visível dentro do método do botão salvar, na classe 
+Tela4_2_Registrar_Notificacao.h).
+
+4) COMO EXECUTAR/ROTEIRO DE TESTES
+Na verdade, estes dois casos de uso equivalem às duas primeiras abas na seção de comunicação do
+sistema. A execução é trivialmente simples, seguindo os informados na própria interface.
+Por exemplo:
+a) (Registrar Novo Buraco) abra, após login,  a aba de Comunicação > Registrar Buraco. Insira, 
+no primeiro campo, o nome da rua onde está o buraco e clique em validar (validar aqui significa 
+garantir que o buraco desta rua, a inserir, é efetivamente inédito no sistema). Caso haja mensagem 
+de prosseguir, insira os próximos dados, regional (norte, sul, leste, etc), posicao (entre as pré 
+disponibilizadas) e tamanho (pelo enunciado do projeto, até 10). Ao clicar em salvar, haverá uma 
+mensagem de retorno indicando o id do novo buraco inserido no sistema.
+b) (Registrar Notificação) abra, após o login (com login e senha iguais a "asses"), a aba 
+Comunicação > Registrar Notificação, e simplesmente preencha os dados solicitados: id do buraco 
+reclamado, data e hora (aqui, um formato em string foi utilizado, conforme instrução do Michelet),
+contato do cidadão (email, telefone, etc) e upload da foto (novamente, segundo instrução do Michelet,
+colocado em string, referente ao diretório/localização da foto na máquina).
+Após a passagem dos dados e clique em salvar, o sistema retorna, em uma caixa de mensagem, o id 
+da nova notificação inserida.
